@@ -5,15 +5,11 @@ from selenium.webdriver.support import expected_conditions as EC
 import requests
 import time
 
-
 def getDefinition(questionWord, optionsElements):
-    
     #Fetches definition and synonyms from Free Dictionary API.
-
     wordClean = questionWord.split()[0].lower()
     optionTexts = [opt.text.lower() for opt in optionsElements]
     print(f"Looking up API for: '{wordClean}'")
-
     knowledgeText = ""
 
     url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{wordClean}"
